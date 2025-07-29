@@ -54,9 +54,17 @@ nav.scrolled {
     background-color: rgba(0, 0, 0, 0.8);
 }
 nav .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent);
+    /* The logo now contains an image instead of plain text */
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+/* Style for the logo image to maintain proper sizing */
+nav .logo img {
+    height: 100%;
+    width: auto;
+    /* Optional: slight drop shadow for better contrast on dark background */
+    filter: drop-shadow(0 0 5px rgba(0, 255, 149, 0.5));
 }
 nav .nav-links {
     list-style: none;
