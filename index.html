@@ -22,7 +22,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#legal">Mentions légales</a></li>
+                    <li><a href="#" class="legal-link">Mentions légales</a></li>
             </ul>
         </nav>
         <!-- Hero section -->
@@ -101,6 +101,36 @@
                 </div>
             </div>
         </section>
+        <!-- Section des clients de confiance -->
+        <section id="trusted" class="trusted">
+            <h2>Ils nous ont fait confiance</h2>
+            <div class="trusted-grid">
+                <div class="trusted-item">
+                    <h3>Air France</h3>
+                    <p>Transformation digitale des services de voyage et optimisation des opérations.</p>
+                </div>
+                <div class="trusted-item">
+                    <h3>BNP Paribas</h3>
+                    <p>Développement d’applications bancaires sécurisées pour une expérience client optimale.</p>
+                </div>
+                <div class="trusted-item">
+                    <h3>Renault</h3>
+                    <p>Solutions logicielles embarquées pour véhicules connectés et gestion de flotte.</p>
+                </div>
+                <div class="trusted-item">
+                    <h3>Orange</h3>
+                    <p>Portail de services clients unifié et outils de gestion des abonnements.</p>
+                </div>
+                <div class="trusted-item">
+                    <h3>L’Oréal</h3>
+                    <p>Applications mobiles et plateformes e‑commerce pour les marques internationales.</p>
+                </div>
+                <div class="trusted-item">
+                    <h3>EDF</h3>
+                    <p>Solutions de monitoring énergétique et de gestion des infrastructures.</p>
+                </div>
+            </div>
+        </section>
         <!-- Contact section -->
         <section id="contact" class="contact">
             <h2>Contactez‑nous</h2>
@@ -120,19 +150,34 @@
             </form>
         </section>
         <!-- Legal section -->
-        <section id="legal" class="legal">
+        <section id="legal" class="legal" style="display: none;">
+            <!-- Cette section est masquée et son contenu est désormais affiché dans une fenêtre modale -->
             <h2>Mentions légales</h2>
             <p><strong>Raison sociale :</strong> NovaSoft SARL au capital de 10 000 €, immatriculée au RCS de Paris sous le numéro 123 456 789.</p>
             <p><strong>Siège social :</strong> 20 Rue des Entrepreneurs, 75015 Paris, France.</p>
-            <p><strong>Directeur de la publication :</strong> John Berry.</p>
+            <p><strong>Directeur de la publication :</strong> Joan Berry.</p>
             <p><strong>Hébergement du site :</strong> GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, États‑Unis.</p>
             <p>Pour toute question, vous pouvez nous contacter à l’adresse e‑mail : <a href="mailto:contact.berryj@gmail.com">contact.berryj@gmail.com</a> ou au <a href="tel:+33659924752">06 59 92 47 52</a>.</p>
             <p>Tous les contenus présents sur ce site sont la propriété exclusive de NovaSoft. Toute reproduction, distribution ou utilisation sans autorisation écrite est strictement interdite.</p>
         </section>
     </main>
     <footer>
-        <p>© 2025 NovaSoft. Tous droits réservés. <a href="#legal">Mentions légales</a></p>
+        <p>© 2025 NovaSoft. Tous droits réservés. <a href="#" class="legal-link">Mentions légales</a></p>
     </footer>
+
+    <!-- Fenêtre modale pour les mentions légales -->
+    <div id="legal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Mentions légales</h2>
+            <p><strong>Raison sociale :</strong> NovaSoft SARL au capital de 10 000 €, immatriculée au RCS de Paris sous le numéro 123 456 789.</p>
+            <p><strong>Siège social :</strong> 20 Rue des Entrepreneurs, 75015 Paris, France.</p>
+            <p><strong>Directeur de la publication :</strong> Joan Berry.</p>
+            <p><strong>Hébergement du site :</strong> GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, États‑Unis.</p>
+            <p>Pour toute question, vous pouvez nous contacter à l’adresse e‑mail : <a href="mailto:contact.berryj@gmail.com">contact.berryj@gmail.com</a> ou au <a href="tel:+33659924752">06 59 92 47 52</a>.</p>
+            <p>Tous les contenus présents sur ce site sont la propriété exclusive de NovaSoft. Toute reproduction, distribution ou utilisation sans autorisation écrite est strictement interdite.</p>
+        </div>
+    </div>
     <script src="script.js"></script>
     <!-- Librairie des particules et configuration -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
