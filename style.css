@@ -88,15 +88,21 @@ nav .nav-links li a:hover {
     max-width: 800px;
     padding: 0 1rem;
 }
+/* Titres du hero plus imposants pour évoquer l'ambition et l'innovation */
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
 }
 .hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
     font-weight: 300;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .btn {
     display: inline-block;
