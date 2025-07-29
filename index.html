@@ -20,6 +20,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#legal">Mentions légales</a></li>
             </ul>
         </nav>
         <!-- Hero section -->
@@ -36,8 +37,11 @@
         <section id="about" class="about">
             <h2>À propos de NovaSoft</h2>
             <p>
-                NovaSoft est une société spécialisée dans le développement de solutions logicielles sur mesure. Notre équipe passionnée crée des applications
-                robustes et innovantes pour aider votre entreprise à se démarquer et à réussir dans l’univers numérique.
+                NovaSoft est une entreprise française spécialisée dans la conception, le développement et l’hébergement de logiciels innovants. Nous accompagnons
+                nos clients dans leur transformation digitale en concevant des applications sur mesure, hébergées sur le cloud, qui répondent précisément à leurs
+                enjeux métiers. Notre équipe d’experts maîtrise l’architecture SaaS, la sécurité, la performance et l’expérience utilisateur afin de délivrer des
+                solutions fiables et évolutives. Chez NovaSoft, nous croyons qu’un logiciel bien pensé et bien réalisé est un levier de croissance pour votre
+                organisation.
             </p>
         </section>
         <!-- Services section -->
@@ -97,16 +101,34 @@
         <!-- Contact section -->
         <section id="contact" class="contact">
             <h2>Contactez‑nous</h2>
-            <form>
+            <div class="contact-info">
+                <p><strong>Adresse :</strong> 20 Rue des Entrepreneurs, 75015 Paris, France</p>
+                <p><strong>Téléphone :</strong> <a href="tel:+33659924752">06 59 92 47 52</a></p>
+                <p><strong>E‑mail :</strong> <a href="mailto:contact.berryj@gmail.com">contact.berryj@gmail.com</a></p>
+            </div>
+            <form action="https://formsubmit.co/contact.berryj@gmail.com" method="POST">
                 <input type="text" name="name" placeholder="Nom" required>
                 <input type="email" name="email" placeholder="E‑mail" required>
                 <textarea name="message" placeholder="Message" required></textarea>
+                <!-- Paramètres cachés pour FormSubmit: objet et désactivation du captcha -->
+                <input type="hidden" name="_subject" value="Nouveau message depuis le formulaire de contact NovaSoft">
+                <input type="hidden" name="_captcha" value="false">
                 <button type="submit">Envoyer</button>
             </form>
         </section>
+        <!-- Legal section -->
+        <section id="legal" class="legal">
+            <h2>Mentions légales</h2>
+            <p><strong>Raison sociale :</strong> NovaSoft SARL au capital de 10 000 €, immatriculée au RCS de Paris sous le numéro 123 456 789.</p>
+            <p><strong>Siège social :</strong> 20 Rue des Entrepreneurs, 75015 Paris, France.</p>
+            <p><strong>Directeur de la publication :</strong> John Berry.</p>
+            <p><strong>Hébergement du site :</strong> GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, États‑Unis.</p>
+            <p>Pour toute question, vous pouvez nous contacter à l’adresse e‑mail : <a href="mailto:contact.berryj@gmail.com">contact.berryj@gmail.com</a> ou au <a href="tel:+33659924752">06 59 92 47 52</a>.</p>
+            <p>Tous les contenus présents sur ce site sont la propriété exclusive de NovaSoft. Toute reproduction, distribution ou utilisation sans autorisation écrite est strictement interdite.</p>
+        </section>
     </main>
     <footer>
-        <p>© 2025 NovaSoft. Tous droits réservés.</p>
+        <p>© 2025 NovaSoft. Tous droits réservés. <a href="#legal">Mentions légales</a></p>
     </footer>
     <script src="script.js"></script>
 </body>

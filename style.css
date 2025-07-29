@@ -279,6 +279,41 @@ section {
     color: #fff;
 }
 
+/* Informations de contact */
+.contact-info {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    color: var(--secondary);
+    font-size: 1rem;
+}
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* Section mentions légales */
+.legal {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+    color: var(--secondary);
+}
+.legal h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+.legal p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+.legal a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
 /* Footer */
 footer {
     background-color: var(--dark);
