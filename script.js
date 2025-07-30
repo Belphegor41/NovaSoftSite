@@ -83,21 +83,65 @@ document.addEventListener('DOMContentLoaded', () => {
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
-        // Répond de manière basique en fonction de quelques mots clés
-        function respond(text) {
-            const m = text.toLowerCase();
-            let response = "Merci pour votre message. Un membre de notre équipe vous contactera bientôt.";
-            if (m.includes('service') || m.includes('services')) {
-                response = "Nous proposons des services de développement de logiciels hébergés, d’architectures SaaS, de cybersécurité et de transformation numérique.";
-            } else if (m.includes('contact')) {
-                response = "Vous pouvez nous contacter au 06 59 92 47 52 ou par e-mail à contact.berryj@gmail.com.";
-            } else if (m.includes('prix') || m.includes('tarif') || m.includes('devis')) {
-                response = "Nos tarifs varient selon les projets. N’hésitez pas à nous transmettre votre demande pour un devis personnalisé.";
+        // Clé API pour l'assistant IA. Remplacez 'YOUR_API_KEY_HERE' par votre clé OpenAI personnelle.
+        const OPENAI_API_KEY = 'YOUR_API_KEY_HERE';
+
+        /**
+         * Fonction asynchrone qui interroge l'API OpenAI pour obtenir une réponse
+         * en utilisant le modèle ChatGPT. Cette fonction nécessite une clé API valide.
+         * @param {string} userMessage Le message saisi par l'utilisateur.
+         * @returns {Promise<string>} La réponse générée par l'IA.
+         */
+        async function fetchAIResponse(userMessage) {
+            try {
+                const res = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${OPENAI_API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: 'gpt-3.5-turbo',
+                        messages: [
+                            { role: 'system', content: 'Vous êtes l’assistant virtuel de NovaSoft. Répondez de manière professionnelle et concise aux questions concernant les services, la société, les tarifs et les demandes de contact.' },
+                            { role: 'user', content: userMessage }
+                        ],
+                        max_tokens: 150,
+                        temperature: 0.7
+                    })
+                });
+                const data = await res.json();
+                if (data && data.choices && data.choices.length > 0) {
+                    return data.choices[0].message.content.trim();
+                }
+                return "Je n'ai pas compris votre demande, pourriez-vous reformuler ?";
+            } catch (error) {
+                console.error('Erreur lors de la requête à OpenAI :', error);
+                return "Désolé, une erreur est survenue lors du traitement de votre demande.";
             }
-            // Temporisation pour un effet plus naturel
-            setTimeout(() => {
-                addMessage(response, 'bot');
-            }, 600);
+        }
+
+        // Répondre en appelant l'API ou, à défaut, en fournissant une réponse simple
+        async function respond(text) {
+            if (OPENAI_API_KEY && OPENAI_API_KEY !== 'YOUR_API_KEY_HERE') {
+                // Utiliser l'IA si une clé API valide est configurée
+                const aiReply = await fetchAIResponse(text);
+                addMessage(aiReply, 'bot');
+            } else {
+                // Fallback simple si aucune clé n'est configurée
+                const m = text.toLowerCase();
+                let response = "Merci pour votre message. Un membre de notre équipe vous contactera bientôt.";
+                if (m.includes('service') || m.includes('services')) {
+                    response = "Nous proposons des services de développement de logiciels hébergés, d’architectures SaaS, de cybersécurité et de transformation numérique.";
+                } else if (m.includes('contact')) {
+                    response = "Vous pouvez nous contacter au 06 59 92 47 52 ou par e-mail à contact.berryj@gmail.com.";
+                } else if (m.includes('prix') || m.includes('tarif') || m.includes('devis')) {
+                    response = "Nos tarifs varient selon les projets. N’hésitez pas à nous transmettre votre demande pour un devis personnalisé.";
+                }
+                setTimeout(() => {
+                    addMessage(response, 'bot');
+                }, 600);
+            }
         }
 
         // Envoyer un message
