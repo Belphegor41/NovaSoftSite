@@ -57,7 +57,8 @@ nav .logo {
     /* The logo now contains an image instead of plain text */
     display: flex;
     align-items: center;
-    height: 50px;
+    /* Increase the height of the logo container to display the logo a bit larger */
+    height: 70px;
 }
 /* Style for the logo image to maintain proper sizing */
 nav .logo img {
@@ -445,4 +446,95 @@ nav {
 .trusted-item p {
     color: var(--secondary);
     font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------ */
+/* Chat widget styles */
+/* The floating chat button invites visitors to open a simple chat assistant. */
+#chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: var(--dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1200;
+}
+
+/* Hidden chat box that appears when the chat button is toggled */
+#chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-height: 450px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1200;
+}
+#chat-box .chat-header {
+    background: var(--primary);
+    color: var(--dark);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#chat-box .chat-header button {
+    background: transparent;
+    border: none;
+    color: var(--dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+#chat-box .chat-messages {
+    flex: 1;
+    padding: 0.75rem;
+    overflow-y: auto;
+}
+#chat-box .chat-input {
+    display: flex;
+    border-top: 1px solid var(--primary);
+}
+#chat-box .chat-input input {
+    flex: 1;
+    padding: 0.5rem;
+    background: transparent;
+    color: var(--text);
+    border: none;
+    outline: none;
+}
+#chat-box .chat-input button {
+    background: var(--primary);
+    color: var(--dark);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+#chat-box .message {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+#chat-box .message.user {
+    text-align: right;
+    color: var(--accent);
+}
+#chat-box .message.bot {
+    text-align: left;
+    color: var(--text);
 }

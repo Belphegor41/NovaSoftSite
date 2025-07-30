@@ -179,6 +179,21 @@
             <p>Tous les contenus présents sur ce site sont la propriété exclusive de NovaSoft. Toute reproduction, distribution ou utilisation sans autorisation écrite est strictement interdite.</p>
         </div>
     </div>
+
+    <!-- Bouton de chat et boîte de dialogue pour l'assistant en ligne -->
+    <!-- Le bouton flottant ouvre un chat minimaliste pour répondre aux questions courantes des visiteurs -->
+    <div id="chat-button" aria-label="Ouvrir le chat">💬</div>
+    <div id="chat-box">
+        <div class="chat-header">
+            <span>Assistant NovaSoft</span>
+            <button class="close-chat" aria-label="Fermer le chat">&times;</button>
+        </div>
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" placeholder="Écrivez votre message…" aria-label="Votre message">
+            <button type="button">Envoyer</button>
+        </div>
+    </div>
     <script src="script.js"></script>
     <!-- Librairie des particules et configuration -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
