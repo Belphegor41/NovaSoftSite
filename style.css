@@ -98,12 +98,22 @@ nav .nav-links li a:hover {
     padding: 0 1rem;
 }
 /* Titres du hero plus imposants pour évoquer l'ambition et l'innovation */
+/* Hero title ajusté pour être plus imposant et découpé en deux lignes colorées */
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.1;
     letter-spacing: 0.5px;
+}
+/* Couleurs différentes pour les lignes du titre afin de rappeler la palette de l'inspiration */
+.hero h1 .line-top {
+    display: block;
+    color: var(--primary);
+}
+.hero h1 .line-bottom {
+    display: block;
+    color: var(--accent);
 }
 .hero p {
     font-size: 1.5rem;
@@ -354,7 +364,7 @@ footer {
 }
 
 /* Conteneur pour les particules animées. Il occupe toute la fenêtre et se place derrière le contenu. */
-#particles-js {
+#tsparticles-container {
     position: fixed;
     top: 0;
     left: 0;

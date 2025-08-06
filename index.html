@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Conteneur pour les particules animées en arrière‑plan -->
-    <div id="particles-js"></div>
+    <!-- Constellation de particules animées pour un fond immersif -->
+    <div id="tsparticles-container"></div>
     <header>
         <nav>
             <!-- Logo image inserted to replace the text, matching the dark/green theme -->
@@ -29,8 +29,11 @@
         <!-- Hero section -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <!-- Titre mis en valeur pour refléter la nouvelle identité visuelle -->
-                <h1>Créons le futur digital avec passion</h1>
+                <!-- Titre mis en valeur et découpé en deux lignes pour évoquer la créativité et l'énergie -->
+                <h1>
+                    <span class="line-top">Créons le futur digital</span>
+                    <span class="line-bottom">avec passion</span>
+                </h1>
                 <p>Nous concevons des solutions logicielles sur mesure pour stimuler la croissance de votre entreprise.</p>
                 <a href="#services" class="btn">Nos services</a>
             </div>
@@ -195,46 +198,40 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <!-- Librairie des particules et configuration -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Librairie tsParticles et configuration du fond avec des particules fluides et colorées -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.11.1/tsparticles.bundle.min.js"></script>
     <script>
-        /* Configuration des particules inspirée des exemples de design moderne */
-        particlesJS('particles-js', {
-          particles: {
-            number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: '#00ff95' },
-            shape: { type: 'circle' },
-            opacity: { value: 0.3, random: false },
-            size: { value: 3, random: true },
-            line_linked: {
-              enable: true,
-              distance: 150,
-              color: '#00ff95',
-              opacity: 0.3,
-              width: 1
+        // Initialisation de tsParticles avec un effet immersif rappelant le design inspirant fourni
+        tsParticles.load("tsparticles-container", {
+            fullScreen: { enable: true, zIndex: 0 },
+            particles: {
+                number: { value: 200, density: { enable: true, value_area: 800 } },
+                color: { value: ["#00c86f", "#c9d436"] },
+                shape: { type: "circle" },
+                opacity: { value: 1, random: true },
+                size: { value: 3, random: true },
+                links: { enable: false },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    outModes: { default: "bounce" }
+                }
             },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: 'none',
-              random: false,
-              straight: false,
-              out_mode: 'out'
-            }
-          },
-          interactivity: {
-            detect_on: 'canvas',
-            events: {
-              onhover: { enable: true, mode: 'repulse' },
-              onclick: { enable: true, mode: 'push' },
-              resize: true
+            interactivity: {
+                events: {
+                    onHover: { enable: true, mode: "repulse" },
+                    onClick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    repulse: { distance: 100 },
+                    push: { quantity: 4 }
+                }
             },
-            modes: {
-              repulse: { distance: 100, duration: 0.4 },
-              push: { particles_nb: 4 }
-            }
-          },
-          retina_detect: true
+            detectRetina: true
         });
     </script>
 </body>
