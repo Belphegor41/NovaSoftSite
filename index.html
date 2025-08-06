@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Constellation de particules animées pour un fond immersif -->
-    <div id="tsparticles-container"></div>
+    <!-- Conteneur pour les particules animées en arrière‑plan -->
+    <div id="particles-js"></div>
     <header>
         <nav>
             <!-- Logo image inserted to replace the text, matching the dark/green theme -->
@@ -29,6 +29,10 @@
         <!-- Hero section -->
         <section id="home" class="hero">
             <div class="hero-content">
+                <!-- Logo centré avec effet néon -->
+                <div class="hero-logo">
+                    <img src="logo.png" alt="Logo NovaSoft">
+                </div>
                 <!-- Titre mis en valeur et découpé en deux lignes pour évoquer la créativité et l'énergie -->
                 <h1>
                     <span class="line-top">Créons le futur digital</span>
@@ -198,40 +202,46 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <!-- Librairie tsParticles et configuration du fond avec des particules fluides et colorées -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.11.1/tsparticles.bundle.min.js"></script>
+    <!-- Librairie des particules et configuration réseau revisitée -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        // Initialisation de tsParticles avec un effet immersif rappelant le design inspirant fourni
-        tsParticles.load("tsparticles-container", {
-            fullScreen: { enable: true, zIndex: 0 },
-            particles: {
-                number: { value: 200, density: { enable: true, value_area: 800 } },
-                color: { value: ["#00c86f", "#c9d436"] },
-                shape: { type: "circle" },
-                opacity: { value: 1, random: true },
-                size: { value: 3, random: true },
-                links: { enable: false },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    outModes: { default: "bounce" }
-                }
+        /* Configuration des particules inspirée du design réseau pour un arrière‑plan élégant */
+        particlesJS('particles-js', {
+          particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#00ff95' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.3, random: false },
+            size: { value: 3, random: true },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: '#00ff95',
+              opacity: 0.3,
+              width: 1
             },
-            interactivity: {
-                events: {
-                    onHover: { enable: true, mode: "repulse" },
-                    onClick: { enable: true, mode: "push" },
-                    resize: true
-                },
-                modes: {
-                    repulse: { distance: 100 },
-                    push: { quantity: 4 }
-                }
+            move: {
+              enable: true,
+              speed: 1.5,
+              direction: 'none',
+              random: false,
+              straight: false,
+              out_mode: 'out'
+            }
+          },
+          interactivity: {
+            detect_on: 'canvas',
+            events: {
+              onhover: { enable: true, mode: 'repulse' },
+              onclick: { enable: true, mode: 'push' },
+              resize: true
             },
-            detectRetina: true
+            modes: {
+              repulse: { distance: 100, duration: 0.4 },
+              push: { particles_nb: 4 }
+            }
+          },
+          retina_detect: true
         });
     </script>
 </body>

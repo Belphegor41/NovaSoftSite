@@ -123,6 +123,19 @@ nav .nav-links li a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Logo au centre de la section hero avec un effet néon */
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.hero-logo img {
+    width: 180px;
+    height: auto;
+    /* Effet néon autour du logo en utilisant plusieurs ombres portées */
+    filter: drop-shadow(0 0 10px var(--accent)) drop-shadow(0 0 20px var(--primary));
+}
 .btn {
     display: inline-block;
     background-color: var(--accent);
@@ -364,7 +377,7 @@ footer {
 }
 
 /* Conteneur pour les particules animées. Il occupe toute la fenêtre et se place derrière le contenu. */
-#tsparticles-container {
+#particles-js {
     position: fixed;
     top: 0;
     left: 0;
